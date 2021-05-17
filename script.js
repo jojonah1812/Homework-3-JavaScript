@@ -1,5 +1,4 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+
 
 var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^",
   "~", "*", "?", "\"", "\\", ":", ];
@@ -32,6 +31,10 @@ confirm("!&#@  Special Characters?");
 
 // if all the character confirms are false, tell user they must 
 // pick at least one group and return to stop the process, start over.  
+if (userSpecial == userSpecial == userLowerCase == userUpperCase = false) {
+alert="Please choose at least one type of character"
+  return;
+}
 
 
 //function to generate password
@@ -48,10 +51,17 @@ confirm("!&#@  Special Characters?");
   //array=array.concat(numericCharacters)
   //for loop[ to call randomlygenerater password, pass our array]
 
-//funtionto rtandomly generate password (array)
+//function to randomly generate password (array)
 //var options = Math.floor(Math.random() * array.length)
+function randomNumber(min, max) { 
+  return Math.random() * (max - min) + min;
+} 
+
 //return options
 
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
