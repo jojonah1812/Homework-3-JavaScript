@@ -1,41 +1,42 @@
-
-
 var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^",
   "~", "*", "?", "\"", "\\", ":", ];
 var lowerCase = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
 var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
 
+function userPasswordOptions() {
+  
 
-//Asking for user input Length
-var userLength = window.prompt("How many letters would you like in your password? Please choose one in the range of 8-128");
+    //Asking for user input Length
+    var userLength = window.prompt("How many letters would you like in your password? Please choose one in the range of 8-128");
 
-  if(isNaN(userLength)){
-    document.write(num1 + " is not a number <br/>");
- }
-  if (userLength <8) {return;
+    if(isNaN(userLength)){
+      alert(userLength + " is not a number"); 
+      return;
+    }
+    if (userLength <8) {return;
+    }
+    if (userLength > 128) {return;
+    }
+
+
+    // Asking for special character types
+    var userNumeric = confirm("Would you like to use numbers in your password?");
+    let userSpecial = confirm("lowercase letters?");
+    let userLowerCase = confirm("UPPERCASE LETTERS?");
+    let userUpperCase = confirm("!&#@  Special Characters?");
+
+    // if all the character confirms are false, tell user they must 
+    // pick at least one group and return to stop the process, start over.  
+    if (userNumeric===false && userSpecial===false && userLowerCase===false && userUpperCase===false) {
+    //FIX ALERT SYNTAX
+      alert("Please choose at least one type of character")
+    return;
+    }
 }
-  if (userLength > 128) {return;
-}
 
-
-// Asking for special character types
-let userNumeric = true;
-confirm("Would you like to use numbers in your password?");
-let userSpecial = true;
-confirm("lowercase letters?");
-let userLowerCase = true;
-confirm("UPPERCASE LETTERS?");
-let userUpperCase = true;
-confirm("!&#@  Special Characters?");
-
-// if all the character confirms are false, tell user they must 
-// pick at least one group and return to stop the process, start over.  
-if (userSpecial == userSpecial == userLowerCase == userUpperCase = false) {
-alert="Please choose at least one type of character"
-  return;
-}
-
+//call on function
+userPasswordOptions()
 
 //function to generate password
   //variable=password options function
