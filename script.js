@@ -1,8 +1,8 @@
-var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^",
-  "~", "*", "?", "\"", "\\", ":", ];
-var lowerCase = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+var lowerCaseChars = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
 var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
+var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", "\"", "\\", ":", ];
+var selectedChar = []
 
 function userPasswordOptions() {
   
@@ -14,25 +14,52 @@ function userPasswordOptions() {
       alert(userLength + " is not a number"); 
       return;
     }
-    if (userLength <8) {return;
+    if (userLength <8) {
+      alert("Please choose a number within the range of 8-128")
+      return;
     }
     if (userLength > 128) {return;
     }
 
-
-    // Asking for special character types
-    var userNumeric = confirm("Would you like to use numbers in your password?");
-    let userSpecial = confirm("lowercase letters?");
-    let userLowerCase = confirm("UPPERCASE LETTERS?");
-    let userUpperCase = confirm("!&#@  Special Characters?");
-
-    // if all the character confirms are false, tell user they must 
+    //"add if's to check values"
+    var userLowerCase = confirm("Would you like to use in your lowercase letters in your password?");
+    var userUpperCase = confirm("UPPERCASE LETTERS?");
+    var userNumeric = confirm("numbers?");
+    var userSpecial = confirm("!&#@  Special Characters?");
+   
+ 
+     // if all the character confirms are false, tell user they must 
     // pick at least one group and return to stop the process, start over.  
-    if (userNumeric===false && userSpecial===false && userLowerCase===false && userUpperCase===false) {
-    //FIX ALERT SYNTAX
+    if (userLowerCase===false && userUpperCase===false && userNumeric===false && userSpecial===false) {
       alert("Please choose at least one type of character")
-    return;
+      return generatePassword;
     }
+
+// Gathering selected characters in a separate array.
+
+if (userNumeric ===true) {
+  selectedChar = selectedChar.concat(lowerCase)
+}
+if (userNumeric ===true) {
+  selectedChar = selectedChar.concat(upperCase)
+}
+if (userNumeric ===true) {
+  selectedChar = selectedChar.concat(numericCase)
+}
+if (userNumeric ===true) {
+  selectedChar = selectedChar.concat(specialCase)
+}
+
+
+var selectedChar = [];
+var password = []
+
+
+
+
+
+
+
 }
 
 //call on function
