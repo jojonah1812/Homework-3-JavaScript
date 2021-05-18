@@ -4,7 +4,7 @@ var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
 var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", "\"", "\\", ":", ];
 var selectedChars = []
 
-function userPasswordOptions() {
+function generatePassword() {
   
     //Asking for user input Length
     var userLength = window.prompt("How many letters would you like in your password? Please choose one in the range of 8-128");
@@ -35,21 +35,34 @@ function userPasswordOptions() {
       return generatePassword;
     }
 
-
+var finalPassword = ""
     // Gathering selected characters in a separate array.
    if (userLowerCase ===true) {
     selectedChars = selectedChars.concat(lowerCaseChars)
+    guaranteeCharacters.push(getRandom(lowerCaseChars))
    }
    if (userUpperCase ===true) {
     selectedChars = selectedChars.concat(upperCaseChars)
+    guaranteeCharacters.push(getRandom(upperCaseChars))
    }
    if (userNumeric ===true) {
     selectedChars = selectedChars.concat(numericCharacters)
+    guaranteeCharacters.push(getRandom(numericCharacters))
     }
    if (userSpecial ===true) {
     selectedChars = selectedChars.concat(specialCharacters)
+    guaranteeCharacters.push(getRandom(specialCharacters))
    }
+   console.log(selectedChars)
+   
+for (var i=0; i<userLength; i++) {
+  var index = Math.floor(Math.random()*selectedChars.length)
+finalPassword+=selectedChars[index]
 }
+
+console.log(finalPassword)
+return finalPassword
+  }
 
 
 
@@ -59,7 +72,7 @@ function userPasswordOptions() {
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-//beginnings of a function toi write a password and top display that text
+//beginnings of a function to write a password and to display that text
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
