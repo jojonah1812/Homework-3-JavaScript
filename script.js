@@ -37,37 +37,55 @@ function userPasswordOptions() {
 
 
     // Gathering selected characters in a separate array.
-if (userNumeric ===true) {
-  selectedChars = selectedChars.concat(lowerCaseChars)
-}
-if (userNumeric ===true) {
-  selectedChars = selectedChars.concat(upperCaseChars)
-}
-if (userNumeric ===true) {
-  selectedChars = selectedChars.concat(numericCharacters)
-}
-if (userNumeric ===true) {
-  selectedChars = selectedChars.concat(specialCharacters)
-}
-
-console.log(selectedChars)
-
-var selectedChar = [];
-var password = [];
-for (var i=0; i<userLength;i++){
- password.push(selectedChars[(Math.floor(Math.random() * selectedChars.userlength))])
-};
-
-
-
-
-
-
-
+   if (userLowerCase ===true) {
+    selectedChars = selectedChars.concat(lowerCaseChars)
+   }
+   if (userUpperCase ===true) {
+    selectedChars = selectedChars.concat(upperCaseChars)
+   }
+   if (userNumeric ===true) {
+    selectedChars = selectedChars.concat(numericCharacters)
+    }
+   if (userSpecial ===true) {
+    selectedChars = selectedChars.concat(specialCharacters)
+   }
 }
 
-//call on function
-userPasswordOptions()
+
+
+
+// Assignment Code
+//query selector to generate the button from the DOM
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+//beginnings of a function toi write a password and top display that text
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+  
+}
+
+// Add event listener for the generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+
+
+
+// var selectedChars = [];
+// var password = [];
+// for (var i=0; i<userLength;i++){
+//  password.push(selectedChars[(Math.floor(Math.random() * selectedChars.userlength))]);
+// }
 
 //function to generate password
   //variable=password options function
@@ -91,19 +109,7 @@ userPasswordOptions()
 
 //return options
 
-// Assignment Code
-    //query selector to generater the button from the DOM
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-    //beginnings of a function toi write a password and top display that text
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
 
-}
 
-// Add event listener for the generate button
-generateBtn.addEventListener("click", writePassword);
