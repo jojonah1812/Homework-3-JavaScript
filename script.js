@@ -3,6 +3,7 @@ var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
 var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", "\"", "\\", ":", ];
 var selectedChars = []
+var guaranteeCharacters = []
 
 function generatePassword() {
   
@@ -34,7 +35,9 @@ function generatePassword() {
       alert("Please choose at least one type of character")
       return generatePassword;
     }
-
+ function getRandom(array){
+   return array [Math.floor(Math.random()*array.length)]
+ }
 var finalPassword = ""
     // Gathering selected characters in a separate array.
    if (userLowerCase ===true) {
