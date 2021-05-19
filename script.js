@@ -18,9 +18,10 @@ function generatePassword() {
       alert("Please choose a number within the range of 8-128")
       return;
     }
-    if (userLength > 128) {return;
+    if (userLength > 128) {
+      alert("Please choose a number within the range of 8-128")
+      return;
     }
-
 
     //"add if's to check values"
     var userLowerCase = confirm("Would you like to use in your lowercase letters in your password?");
@@ -30,7 +31,8 @@ function generatePassword() {
    
      
     // if all the character confirms are false, tell user they must 
-    // pick at least one group and return to stop the process, start over.  
+    // pick at least one group and return to stop the process, start over.
+          //ERROR screen is weird when selct 128+  
     if (userLowerCase===false && userUpperCase===false && userNumeric===false && userSpecial===false) {
       alert("Please choose at least one type of character")
       return generatePassword;
@@ -39,24 +41,24 @@ function generatePassword() {
    return array [Math.floor(Math.random()*array.length)]
  }
 var finalPassword = ""
-    // Gathering selected characters in a separate array.
-   if (userLowerCase ===true) {
+   
+    if (userLowerCase ===true) {
     selectedChars = selectedChars.concat(lowerCaseChars)
     guaranteeCharacters.push(getRandom(lowerCaseChars))
-   }
-   if (userUpperCase ===true) {
+    }
+    if (userUpperCase ===true) {
     selectedChars = selectedChars.concat(upperCaseChars)
     guaranteeCharacters.push(getRandom(upperCaseChars))
-   }
-   if (userNumeric ===true) {
+    }
+    if (userNumeric ===true) {
     selectedChars = selectedChars.concat(numericCharacters)
     guaranteeCharacters.push(getRandom(numericCharacters))
     }
-   if (userSpecial ===true) {
+    if (userSpecial ===true) {
     selectedChars = selectedChars.concat(specialCharacters)
     guaranteeCharacters.push(getRandom(specialCharacters))
-   }
-   console.log(selectedChars)
+    }
+   console.log(selectedChars);
    
 for (var i=0; i<userLength; i++) {
   var index = Math.floor(Math.random()*selectedChars.length)
@@ -95,7 +97,22 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
+    // Gathering selected characters in a separate array.
+  //   if (userLowerCase ===true) {
+  //     finalPassword = (getRandom(lowerCaseChars))<br>
+  //   }
 
+  // console.log(finalPassword)
+
+    // if (userLowerCase ===true) {
+    //   finalPassword = (getRandom(upperCaseChars))
+    // }<br></br>
+    // if (userLowerCase ===true) {
+    //   finalPassword = (getRandom(numericCharacters))
+    // }<br></br>
+    // if (userLowerCase ===true) {
+    //   finalPassword = (getRandom(specialCharacters))
+    // }<br></br>
 
 // var selectedChars = [];
 // var password = [];

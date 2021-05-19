@@ -41,21 +41,10 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the web application's appearance and functionality:
 
-
-P
- I
-  C
-   T
-    U
-     R
-      E
+![screenshot of webpage](./assets/myimage.png "screenshot")
 
 
 
 ## Link to Project
-Project: https://jojonah1812.github.io/Homework-3-JavaScript/
+Project: https://jojonah1812.github.io/Homework-3-JavaScript/  
 GitHub: https://github.com/jojonah1812/Homework-3-JavaScript
-
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
