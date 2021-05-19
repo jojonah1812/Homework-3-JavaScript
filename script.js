@@ -34,7 +34,7 @@ function generatePassword() {
     // pick at least one group and return to stop the process, start over.
           //ERROR screen is weird when selct 128+  
     if (userLowerCase===false && userUpperCase===false && userNumeric===false && userSpecial===false) {
-      alert("Please choose at least one type of character")
+      alert("Please choose at least one type of character");
       // return generatePassword;
       return;
     }
