@@ -1,25 +1,25 @@
 var lowerCaseChars = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
 var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
-var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", "\"", "\\", ":", ];
+var specialCharacters = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", "\"", "\\", ":", ]
 var selectedChars = []
 var guaranteeCharacters = []
 
 function generatePassword() {
   
     //Asking for user input Length
-    var userLength = window.prompt("How many letters would you like in your password? Please choose one in the range of 8-128");
+    var userLength = parseInt(prompt("How many letters would you like in your password? Please choose one in the range of 8-128"));
 
-    if(isNaN(userLength)){
+    if(isNaN(userLength)===true){
       alert(userLength + " is not a number. Try it again."); 
       return;
     }
     if (userLength <8) {
-      alert("Please choose a number within the range of 8-128")
+      alert("Please choose a number within the range of 8-128");
       return;
     }
     if (userLength > 128) {
-      alert("Please choose a number within the range of 8-128")
+      alert("Please choose a number within the range of 8-128");
       return;
     }
 
@@ -35,7 +35,8 @@ function generatePassword() {
           //ERROR screen is weird when selct 128+  
     if (userLowerCase===false && userUpperCase===false && userNumeric===false && userSpecial===false) {
       alert("Please choose at least one type of character")
-      return generatePassword;
+      // return generatePassword;
+      return;
     }
  function getRandom(array){
    return array [Math.floor(Math.random()*array.length)]
@@ -69,15 +70,11 @@ console.log(finalPassword)
 return finalPassword
   }
 
-
-
-
 // Assignment Code
 //query selector to generate the button from the DOM
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-//beginnings of a function to write a password and to display that text
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -88,61 +85,3 @@ function writePassword() {
 
 // Add event listener for the generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
-
-    // Gathering selected characters in a separate array.
-  //   if (userLowerCase ===true) {
-  //     finalPassword = (getRandom(lowerCaseChars))<br>
-  //   }
-
-  // console.log(finalPassword)
-
-    // if (userLowerCase ===true) {
-    //   finalPassword = (getRandom(upperCaseChars))
-    // }<br></br>
-    // if (userLowerCase ===true) {
-    //   finalPassword = (getRandom(numericCharacters))
-    // }<br></br>
-    // if (userLowerCase ===true) {
-    //   finalPassword = (getRandom(specialCharacters))
-    // }<br></br>
-
-// var selectedChars = [];
-// var password = [];
-// for (var i=0; i<userLength;i++){
-//  password.push(selectedChars[(Math.floor(Math.random() * selectedChars.userlength))]);
-// }
-
-//function to generate password
-  //variable=password options function
-  //array=[]
-  //check if options exist, return
-  //check if options have special characters
-  //array=array.concat(specialCharacters)
-  //check if options have special characters
-  //array=array.concat(lowerCaseCharacters)
-  //check if options have special characters
-  //array=array.concat(upperCaseCharacters)
-  //check if options have special characters
-  //array=array.concat(numericCharacters)
-  //for loop[ to call randomlygenerater password, pass our array]
-
-//function to randomly generate password (array)
-//var options = Math.floor(Math.random() * array.length)
-// function randomNumber(min, max) { 
-//   return Math.random() * (max - min) + min;
-// } 
-
-//return options
-
-
-
-
-
